@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools - 桌面客户端工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+            line-height: 1.6;
+            color: #c9d1d9;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #0d1117;
+            min-height: 100vh;
+        }
+        .container {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 40px;
+        }
+        h1 {
+            color: #58a6ff;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+            font-weight: 600;
+        }
+        h1::before {
+            content: '$ ';
+            color: #7ee787;
+        }
+        .subtitle {
+            color: #8b949e;
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #c9d1d9;
+            margin: 35px 0 18px;
+            font-size: 1.3em;
+            font-weight: 600;
+            padding-left: 12px;
+            border-left: 3px solid #58a6ff;
+        }
+        h2::before {
+            content: '# ';
+            color: #7ee787;
+        }
+        .download-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .download-btn {
+            display: block;
+            padding: 14px 20px;
+            background: #21262d;
+            color: #58a6ff;
+            text-decoration: none;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .download-btn:hover {
+            background: #30363d;
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+        }
+        .warning {
+            background: #21262d;
+            border: 1px solid #f0883e;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .warning h3 {
+            color: #f0883e;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        pre {
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 18px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid #30363d;
+            font-size: 0.9em;
+        }
+        code {
+            font-family: 'SF Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        }
+        .license-box {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .license-box pre {
+            background: #0d1117;
+            color: #7ee787;
+            border: none;
+        }
+        .success {
+            background: #21262d;
+            border: 1px solid #7ee787;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #7ee787;
+        }
+        .success::before {
+            content: '✓ ';
+        }
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 18px;
+            margin: 20px 0;
+        }
+        .screenshot-item {
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #30363d;
+            transition: all 0.2s;
+        }
+        .screenshot-item:hover {
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+        }
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .screenshot-caption {
+            padding: 10px;
+            background: #21262d;
+            text-align: center;
+            font-weight: 500;
+            color: #8b949e;
+            font-size: 0.9em;
+        }
+        p {
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DevTools</h1>
+        <p class="subtitle">A powerful desktop client with essential developer tools</p>
+
+        <h2>下载地址</h2>
+        <div class="download-links">
+            <a href="https://www.quwenjian.cc/#/?code=61908" class="download-btn" target="_blank">macOS</a>
+            <a href="https://www.quwenjian.cc/#/?code=31215" class="download-btn" target="_blank">Windows</a>
+            <a href="https://www.quwenjian.cc/#/?code=64532" class="download-btn" target="_blank">Linux</a>
+        </div>
+
+        <h2>安装说明</h2>
+        
+        <div class="warning">
+            <h3>macOS 安装注意事项</h3>
+            <p>macOS 安装可能会出现报错。如果报此问题，进入到安装文件所在目录，执行以下命令后再进行安装：</p>
+            <pre><code># 1. 赋予核心二进制文件可执行权限
+chmod +x DevTools.app/Contents/MacOS/app
+
+# 2. 彻底移除 macOS 的隔离属性
+xattr -cr DevTools.app</code></pre>
+        </div>
+
+        <div class="success">
+            <p>Windows 和 Linux 用户：正常安装即可</p>
+        </div>
+
+        <h2>激活信息</h2>
+        <p>工具的默认激活用户和密钥如下：</p>
+        <div class="license-box">
+            <pre><code>=== Generated License ===
+User: devTools
+Key: 
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkZXZUb29scyIsImV4cCI6MTkyNjYzNTg3N30.hsze66VMAHhzGfiMhkRMfxlNHuF3FAxEEWKVdSdFkgUBlU91rLD1VXPfWGggAbOr2O3PYW8YPMBPi8huPrBmBBVzYcvL4Mh_C0kOXoAOXgcm-9t-5ZGKKMlOukKCTIloNkjK6_Vq6DFzv2zujOwxuE3QIK23T0zprOdLU0WY2zVCc-CYf9hPqLrP8defKVx6mHztIyQbMurfFgUk98zBWQDdLURj0xLpyVwY0s_d8eAq_xHL35FtMbbv0EUaMmiOrT2VXTcmXuTBRt1fv9GOa65s-zz31dLbYpBxsADORusPPULK0KbHVecw_wGI5vtsiSJiuc_EF3Sw-RyAPJVjYA
+=========================</code></pre>
+        </div>
+
+        <h2>功能截图</h2>
+        <div class="screenshots">
+            <div class="screenshot-item">
+                <img src="1.png" alt="JSON工具">
+                <div class="screenshot-caption">JSON工具</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="2.png" alt="SQL工具">
+                <div class="screenshot-caption">SQL工具</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="3.png" alt="时间戳工具">
+                <div class="screenshot-caption">时间戳工具</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="4.png" alt="翻译工具">
+                <div class="screenshot-caption">翻译工具</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="5.png" alt="AI助手">
+                <div class="screenshot-caption">AI助手</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="6.png" alt="Markdown工具">
+                <div class="screenshot-caption">Markdown工具</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="7.png" alt="随机密码工具">
+                <div class="screenshot-caption">随机密码工具</div>
+            </div>
+            <div class="screenshot-item">
+                <img src="8.png" alt="API测试工具">
+                <div class="screenshot-caption">API测试工具</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
