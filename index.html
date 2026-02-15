@@ -156,6 +156,29 @@
         p {
             color: #8b949e;
         }
+        .time-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+            font-size: 0.85em;
+        }
+        .time-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            color: #8b949e;
+        }
+        .time-label {
+            color: #8b949e;
+        }
+        .time-value-download {
+            color: #f0883e;
+            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+        }
+        .time-value-key {
+            color: #7ee787;
+            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+        }
     </style>
 </head>
 <body>
@@ -231,6 +254,39 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkZXZUb29scyIsImV4cCI6MTkyNjYzNTg
                 <div class="screenshot-caption">简易postman</div>
             </div>
         </div>
+        
+        <div class="time-info">
+            <div class="time-item">
+                <span class="time-label">下载资源自动检查</span>
+                <span class="time-value-download" id="download-time"></span>
+            </div>
+            <div class="time-item">
+                <span class="time-label">密钥状态自动检查</span>
+                <span class="time-value-key" id="key-time"></span>
+            </div>
+        </div>
     </div>
+    
+    <script>
+        function addDays(date, days) {
+            const result = new Date(date);
+            result.setDate(result.getDate() + days);
+            return result;
+        }
+        
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+        
+        const today = new Date('2026-02-15');
+        const downloadDate = addDays(today, 28);
+        const keyDate = addDays(today, 178);
+        
+        document.getElementById('download-time').textContent = formatDate(downloadDate);
+        document.getElementById('key-time').textContent = formatDate(keyDate);
+    </script>
 </body>
 </html>
