@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevTools - 桌面客户端工具</title>
+    <title>DevTool - 桌面客户端工具</title>
     <style>
         * {
             margin: 0;
@@ -188,8 +188,8 @@
 
         <h2>下载地址</h2>
         <div class="download-links">
-            <a href="https://www.quwenjian.cc/#/?code=61908" class="download-btn" target="_blank">macOS</a>
-            <a href="https://www.quwenjian.cc/#/?code=31215" class="download-btn" target="_blank">Windows</a>
+            <a href="https://www.quwenjian.cc/#/?code=W4E8H" class="download-btn" target="_blank">macOS</a>
+            <a href="https://www.quwenjian.cc/#/?code=A0C3E" class="download-btn" target="_blank">Windows</a>
             <a href="https://www.quwenjian.cc/#/?code=64532" class="download-btn" target="_blank">Linux</a>
         </div>
 
@@ -257,10 +257,6 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkZXZUb29scyIsImV4cCI6MTkyNjYzNTg
         
         <div class="time-info">
             <div class="time-item">
-                <span class="time-label">下载资源自动检查</span>
-                <span class="time-value-download" id="download-time"></span>
-            </div>
-            <div class="time-item">
                 <span class="time-label">密钥状态自动检查</span>
                 <span class="time-value-key" id="key-time"></span>
             </div>
@@ -282,10 +278,8 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkZXZUb29scyIsImV4cCI6MTkyNjYzNTg
         }
         
         const today = new Date('2026-02-15');
-        const downloadDate = addDays(today, 28);
         const keyDate = addDays(today, 178);
         
-        document.getElementById('download-time').textContent = formatDate(downloadDate);
         document.getElementById('key-time').textContent = formatDate(keyDate);
     </script>
 </body>
